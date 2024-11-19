@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        Contact Us
+    </div>
+
+    <div class="content">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+            <label>Message:</label><br>
+            <textarea name="message" required></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+        <div id="responseMessage" style="margin-top: 10px; font-size: 1.2em;"></div>
+    </div>
+    
+    <script>
+        // Handle form submission
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            const formData = new FormData(this);
+            const formObj = {};
+            formData.forEach((value, key) => (formObj[key] = value));
+    
+            // Send form data to the backend
+            fetch("/submit-contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formObj),
+            })
+                .then((response) => response.text())
+                .then((message) => {
+                    document.getElementById("responseMessage").innerText = message;
+                    this.reset();
+                })
+                .catch((err) => {
+                    document.getElementById("responseMessage").innerText =
+                        "Error: Failed to send the message.";
+                    console.error("Submission error:", err);
+                });
+        });
+    </script>
+    
+
+    <footer>
+        <p>Travel Agency | All rights reserved &copy; 2024</p>
+    </footer>
+</body>
+</html>

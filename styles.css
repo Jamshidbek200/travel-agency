@@ -1,0 +1,115 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #b2ebf2); /* Background gradient */
+    color: #333;
+}
+
+/* Header and Menu Styling */
+header {
+    background-color: #00796b; /* Dark teal */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #004d40; /* Lighter teal */
+}
+
+/* Banner Styling */
+.banner {
+    background: url('banner.jpg') no-repeat center/cover; /* Replace with an actual image */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Content Styling */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #004d40; /* Dark teal */
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.cta {
+    margin: 20px 0;
+}
+
+.cta a {
+    text-decoration: none;
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.cta a:hover {
+    background-color: #004d40;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+}
+
+/* Page-Specific Styling */
+.map-container {
+    margin: 20px auto;
+    width: 80%;
+    height: 300px;
+    background-color: #b2dfdb; /* Placeholder for map */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004d40;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
